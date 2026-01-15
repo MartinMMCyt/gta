@@ -1,5 +1,5 @@
+<!-- Ported by Genizy, Bubbls, and Martin_MMC -->
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -7,7 +7,7 @@
     <script>
         window.gameconfig = {
             name: "Grand Theft Auto - Chinatown Wars (USA)",
-            url: "https://cdn.jsdelivr.net/gh/bubbls/ugss@f8e74f824068a8b40cc6e091567fe1e4c65656d4/Grand%20Theft%20Auto%20-%20Chinatown%20Wars%20(USA)%20(En%2CFr%2CDe%2CEs%2CIt)/Grand%20Theft%20Auto%20-%20Chinatown%20Wars%20(USA)%20(En%2CFr%2CDe%2CEs%2CIt).nds",
+            url: "https://cdn.jsdelivr.net/gh/martinmmcyt/gta@main/grand-theft-auto-chinatown-wars/Grand%20Theft%20Auto%20-%20Chinatown%20Wars%20(USA)%20(En%2CFr%2CDe%2CEs%2CIt).nds",
             core: "nds",
             min: 1,
             max: 7,
@@ -82,7 +82,7 @@
     <div id="game-container">
         <div id="game"></div>
         <div id="loading-progress">Loading: 0/0</div>
-        <div id="first-time">First-time loading may take longer...</div>
+        <div id="first-time">First time loading may take longer...</div>
     </div>
     <script>
         var parts = getParts(
@@ -110,11 +110,11 @@
                 EJS_gameName = window.gameconfig.name;
                 EJS_color = "#0064ff";
                 EJS_startOnLoaded = true;
-                EJS_pathtodata = "https://cdn.jsdelivr.net/gh/genizy/emu@master/";
+                EJS_pathtodata = "https://cdn.jsdelivr.net/gh/martinmmcyt/emulatorjs@master/";
                 EJS_gameUrl = gameUrl;
                 const script = document.createElement("script");
                 script.src =
-                    "https://cdn.jsdelivr.net/gh/genizy/emu@master/loader.js";
+                    "https://cdn.jsdelivr.net/gh/martinmmcyt/emulatorjs@master/loader.js";
                 document.body.appendChild(script);
             })
             .catch((error) => {
