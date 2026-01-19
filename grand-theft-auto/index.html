@@ -14,13 +14,6 @@
             height: 100%;
             background: black;
             z-index: -2;
-            transition: opacity 1s ease;
-            opacity: 1;
-        }
-
-        #bg-canvas.fade-out {
-            opacity: 0;
-            pointer-events: none;
         }
 
         body {
@@ -125,14 +118,9 @@
         function loadProject(url) {
             menu.style.display = "none";
 
-            // fade out canvas
-            canvas.classList.add("fade-out");
-
-            // stop animation after fade
-            setTimeout(() => {
-                cancelAnimationFrame(animationId);
-                canvas.style.display = "none";
-            }, 1000);
+            // stop animation immediately
+            cancelAnimationFrame(animationId);
+            canvas.style.display = "none";
 
             // show iframe
             viewer.src = url;
@@ -177,7 +165,9 @@
 
         function hexToRgb(hex) {
             let c = hex.replace('#', '');
-            if (c.length === 3) c = c[0] + c[0] + c[1] + c[1] + c[2] + c[2];
+            if (c.length === 3) {
+                c = c[0] + c[0] + c[1] + c[1] + c[2] + c[2];
+            }
             const bigint = parseInt(c, 16);
             return `${(bigint >> 16) & 255},${(bigint >> 8) & 255},${bigint & 255}`;
         }
@@ -211,4 +201,5 @@
     </script>
 
 </body>
+
 </html>
